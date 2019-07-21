@@ -1,28 +1,70 @@
 package ru.expo.servercontrol.model;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+//@Entity
+//@Table(name = "status")
 public class Status {
-    String pc;
-    String loadCP;
-    String loadRAM;
-    String temperature;
-    String countSession;
-    String countErrors;
-    String fanSpeed;
 
-    public String getPc() {
-        return pc;
+    /*@Id
+    @Column("id")
+    @GeneratedValue(GenerationType.IDENTITY)*/
+    private Integer id;
+    private Date date;
+    //@Column(name = "num_server")
+    private String numServer;
+    //@Column(name = "temp_cpu")
+    private String tempCPU;
+    //@Column(name = "load_cpu")
+    private String loadCPU;
+    //@Column(name = "load_ram")
+    private String loadRAM;
+    //@Column(name = "count_view")
+    private String countView;
+    //@Column(name = "count_click")
+    private String countClick;
+    //@Column(name = "count_new_user")
+    private String countNewUser;
+    //@OneToMany(targetEntity = Site.class, mappedBy = "id", orphanRemoval = false, fetch = FetchType.LAZY)
+    private List<Site> sites;
+    private Long time;
+
+    public Status() {
+        sites = new ArrayList<>();
     }
 
-    public void setPc(String pc) {
-        this.pc = pc;
+    public Date getDate() {
+        return date;
     }
 
-    public String getLoadCP() {
-        return loadCP;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public void setLoadCP(String loadCP) {
-        this.loadCP = loadCP;
+    public String getNumServer() {
+        return numServer;
+    }
+
+    public void setNumServer(String numServer) {
+        this.numServer = numServer;
+    }
+
+    public String getTempCPU() {
+        return tempCPU;
+    }
+
+    public void setTempCPU(String tempCPU) {
+        this.tempCPU = tempCPU;
+    }
+
+    public String getLoadCPU() {
+        return loadCPU;
+    }
+
+    public void setLoadCPU(String loadCPU) {
+        this.loadCPU = loadCPU;
     }
 
     public String getLoadRAM() {
@@ -33,35 +75,39 @@ public class Status {
         this.loadRAM = loadRAM;
     }
 
-    public String getTemperature() {
-        return temperature;
+    public String getCountView() {
+        return countView;
     }
 
-    public void setTemperature(String temperature) {
-        this.temperature = temperature;
+    public void setCountView(String countView) {
+        this.countView = countView;
     }
 
-    public String getCountSession() {
-        return countSession;
+    public String getCountClick() {
+        return countClick;
     }
 
-    public void setCountSession(String countSession) {
-        this.countSession = countSession;
+    public void setCountClick(String countClick) {
+        this.countClick = countClick;
     }
 
-    public String getCountErrors() {
-        return countErrors;
+    public String getCountNewUser() {
+        return countNewUser;
     }
 
-    public void setCountErrors(String countErrors) {
-        this.countErrors = countErrors;
+    public void setCountNewUser(String countNewUser) {
+        this.countNewUser = countNewUser;
     }
 
-    public String getFanSpeed() {
-        return fanSpeed;
+    public List<Site> getSites() {
+        return sites;
     }
 
-    public void setFanSpeed(String fanSpeed) {
-        this.fanSpeed = fanSpeed;
+    public void setSites(List<Site> sites) {
+        this.sites = sites;
+    }
+
+    public void addSite(Site site) {
+        sites.add(site);
     }
 }
