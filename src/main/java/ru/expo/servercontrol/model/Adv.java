@@ -16,6 +16,7 @@ public class Adv {
     private String ctr;
 
     public Adv() {
+        this.date = new Date();
     }
 
     public Adv(String sumAll, String sumLast, String sumThis, String view, String priceView, String click, String priceClick, String ctr, String id) {
@@ -53,6 +54,10 @@ public class Adv {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public void setDate() {
+        this.date = new Date();
     }
 
     public String getSumAll() {

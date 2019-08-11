@@ -18,8 +18,12 @@ public class AdvController {
     }
 
     @PostMapping()
-    public void postAdv(@RequestBody List<Adv> advs) {
+    public List<Adv> postAdv(@RequestBody List<Adv> advs) {
+        for(Adv adv : advs){
+            adv.setDate();
+        }
         this.advs = advs;
+        return advs;
     }
 
     @GetMapping()
