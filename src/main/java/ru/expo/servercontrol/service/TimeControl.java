@@ -3,7 +3,6 @@ package ru.expo.servercontrol.service;
 import org.springframework.stereotype.Service;
 import ru.expo.servercontrol.model.Status;
 
-import java.time.Instant;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -14,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class TimeControl {
 
     private Integer TIME_LIMIT = 5; //5 минут
-    private Integer TIME_LIMIT_DELL = 2; //1440; //1 день
+    private Integer TIME_LIMIT_DELL = 1440; //1 день
 
     private HashMap<String, List<Status>> statusListServer;
 
@@ -32,7 +31,6 @@ public class TimeControl {
         while (true) {
             try {
                 checkRun();
-                System.out.println("---");
                 Thread.sleep(10000);
             } catch (InterruptedException e) {
                 e.printStackTrace();

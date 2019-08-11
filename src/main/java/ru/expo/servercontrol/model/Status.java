@@ -31,6 +31,16 @@ public class Status {
     private List<Site> sites;
     private Long time;
 
+    private String countError;
+
+    public String getCountError() {
+        return countError;
+    }
+
+    public void setCountError(String countError) {
+        this.countError = countError;
+    }
+
     public Status() {
         sites = new ArrayList<>();
     }
